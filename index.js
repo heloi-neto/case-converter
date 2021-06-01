@@ -1,7 +1,20 @@
 const clipboardy = require('clipboardy');
-const snakeCase = require('snake-case');
-const camelCase = require('camelcase');
+// const snakeCase = require('snake-case');
+// const camelCase = require('camelcase');
 const { toKebabCase, toTitleCase } = require('@corex/string-util');
+const {
+  camelCase,
+  capitalCase,
+  constantCase,
+  dotCase,
+  headerCase,
+  noCase,
+  paramCase,
+  pascalCase,
+  pathCase,
+  sentenceCase,
+  snakeCase,
+} = require('change-case');
 
 // include alternatingCase, inverseCase, toCamelCase, toSnakeCase, toKebabCase? (https://en.wikipedia.org/wiki/Letter_case)
 
@@ -51,27 +64,6 @@ const toCase = process.argv[2];
 
 getConvertedStr = (clipboardStr) => {
   return clipboardStr[toCase]() ?? clipboardStr;
-
-  // switch (toCase) {
-  //   case 'toUpperCase':
-  //     return clipboardStr.toUpperCase();
-  //   case 'toLowerCase':
-  //     return clipboardStr.toLowerCase();
-  //   case 'toSentenceCase':
-  //     return clipboardStr.toSentenceCase();
-  //   case 'toProperCase':
-  //     return clipboardStr.toProperCase();
-  //   case 'toTitleCase':
-  //     break;
-  //   case 'toCamelCase':
-  //     return clipboardStr.toCamelCase();
-  //   case 'toSnakeCase':
-  //     return clipboardStr.toSnakeCase();
-  //   case 'toKebabCase':
-  //     return clipboardStr.toKebabCase();
-  //   default:
-  //     return clipboardStr;
-  // }
 };
 
 clipboardy.writeSync(getConvertedStr(clipboardy.readSync()));
