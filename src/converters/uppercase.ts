@@ -6,7 +6,7 @@
  * @returns {string} Returns the upper cased string.
  * @example
  *
- * upperCase('fooBar')
+ * upperCase('foo Bar')
  * // => 'FOO BAR'
  */
 const upperCase = (string: string) => string.toUpperCase();
