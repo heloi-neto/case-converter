@@ -1,3 +1,2 @@
-# case-converter
+# Case Converter
 
-ant

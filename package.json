@@ -1,7 +1,7 @@
 {
   "name": "case-converter",
   "version": "1.0.0",
-  "description": "ant",
+  "description": "Convert letter cases",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
@@ -43,7 +43,8 @@
   },
   "dependencies": {
     "@bitauth/libauth": "^1.17.1",
-    "clipboardy": "^3.0.0"
+    "clipboardy": "^3.0.0",
+    "mocha": "^10.0.0"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",

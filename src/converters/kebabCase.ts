@@ -1,10 +1,11 @@
 import words from '../lib/utils/words';
 
+const reQuotes = /['\u2019]/g;
+
 /**
  * Converts `string` to
  * [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
  *
- * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the kebab cased string.
@@ -16,12 +17,9 @@ import words from '../lib/utils/words';
  *
  * kebabCase('fooBar')
  * // => 'foo-bar'
- *
- * kebabCase('__FOO_BAR__')
- * // => 'foo-bar'
  */
 const kebabCase = (string: string) =>
-  words(string.replace(/['\u2019]/g, '')).reduce(
+  words(string.replace(reQuotes, '')).reduce(
     (result, word, index) => result + (index ? '-' : '') + word.toLowerCase(),
     ''
   );
