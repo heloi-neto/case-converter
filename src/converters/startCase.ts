@@ -1,4 +1,5 @@
-import words from '../lib/utils/words';
+import upperFirst from "../lib/utils/upperFirst";
+import words from "../lib/utils/words";
 
 /**
  * Converts `string` to
@@ -11,16 +12,12 @@ import words from '../lib/utils/words';
  * @see camelCase, lowerCase, kebabCase, snakeCase, upperCase, upperFirst
  * @example
  *
- * startCase('--foo-bar--')
- * // => 'Foo Bar'
+ * startCase('foo bar')
+ * // => 'Foo bar'
  *
- * startCase('fooBar')
+ * startCase('foo Bar')
  * // => 'Foo Bar'
  */
-const startCase = (string: string) =>
-  words(string).reduce(
-    (result, word, index) => result + (index ? ' ' : '') + upperFirst(word),
-    ''
-  );
+const startCase = (string: string) => upperFirst(string.toLowerCase());
 
 export default startCase;
